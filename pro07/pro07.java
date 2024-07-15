@@ -25,6 +25,7 @@ public class pro07 {
 						y = 10;
 					} else {
 						set.add(x + "," + y + " " + x + "," + (++y)); // 현재 좌표의 출발점과 이동한 점 해시셋에 추가
+						set.add(x + "," + y + " " + x + "," + (y-1));
 					}
 
 				} else if (array[i] == 'D') {
@@ -33,6 +34,7 @@ public class pro07 {
 						y = 0;
 					} else { 
 						set.add(x + "," + y + " " + x + "," + (--y)); // 현재 좌표의 출발점과 이동한 점 해시셋에 추가
+						set.add(x + "," + y + " " + x + "," + (y+1)); // 정답에는 방향성이 없으니 반대 방향도 추가
 					}
 
 				}
@@ -46,6 +48,7 @@ public class pro07 {
 
 					} else {
 						set.add(x + "," + y + " " + (--x) + "," + y);  // 현재 좌표의 출발점과 이동한 점 해시셋에 추가
+						set.add(x + "," + y + " " + (x+1) + "," + y);
 					}
 
 				} else if (array[i] == 'R') {
@@ -54,12 +57,13 @@ public class pro07 {
 						x = 10;
 					} else {
 						set.add(x + "," + y + " " + (++x) + "," + y); // 현재 좌표의 출발점과 이동한 점 해시셋에 추가
+						set.add(x + "," + y + " " + (x-1) + "," + y);
 					}
 
 				}
 			}
 		}
 
-		return set.size();
+		return set.size()/2;
 	}
 }
