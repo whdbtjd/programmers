@@ -6,7 +6,7 @@ public class pro07 {
 	public static void main(String args[]) {
 		System.out.println(solution("LLLLLLLLLLLLLLLLLUUUUUURRRDDDDDDDDDD"));
 	}
-
+ 
 	static int solution(String dirs) {
 		// 현재 좌표를 (5,5)로 설정
 		int x = 5;
