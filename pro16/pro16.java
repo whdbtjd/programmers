@@ -20,11 +20,13 @@ public class pro16 {
 		for (int i = 0; i < progresses.length; i++) {
 			// 해당 기능이 개발되는데 걸리는 시간 계산
 			day = (int) Math.ceil((100.0 - progresses[i]) / speeds[i]);
-
+            
+			// 현재 큐의 가장 오래걸리는 개발시간보다 더 오래걸리는 개발시간이 나오면 큐를 비우고 리스트에 추가
 			if (!queue.isEmpty() && queue.peekLast() < day) {
 				list.add(queue.size());
 				queue.clear();
 			}
+			
 				queue.add(day);
 			
 		
